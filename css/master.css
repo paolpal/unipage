@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+  transition: 0.35s;
+}
+
+.noscroll {
+  position: relative;
+  overflow: hidden;
+}
+
+.open {
+  width: 30% !important;
+}
+
+/* Style the body */
+body {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+  height: 100%;
+}
+
+/* Header/logo Title */
+div.header-bg{
+  background-image: url('http://paolopalumbotesting.altervista.org/blog/img/home-bg.jpg');
+  background-size: cover;
+}
+
+header {
+  padding: 60px;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-size: cover;
+}
+
+header h1 {
+  font-size: 6ex;
+}
+
+header hr {
+  background-color: black;
+}
+
+header h2 {
+  font-weight: bold;
+  font-size: 4ex;
+}
+
+header a {
+  color: #ff891a;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: #ffc71a;
+  text-decoration: none;
+}
+
+/* Style the top navigation bar */
+nav {
+  display: flex;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+nav a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Change color on hover */
+nav a:hover {
+  background-color: #ffc71a;
+  color: black;
+}
+
+nav a.active {
+  font-weight: bold;
+  color: black;
+  background-color: #ff891a;
+}
+
+nav a.user {
+  cursor: pointer;
+}
+/* Column container */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side-left {
+  flex: 25%;
+  background-color: #f1f1f1;
+  padding: 20px;
+  overflow: auto;
+}
+
+.side-left a{
+  padding: 14px 20px;
+  background-color: #333;
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.side-left a:hover{
+  background-color: #ffc71a;
+  color: black;
+}
+
+/* Main column */
+.main {
+  flex: 75%;
+  background-color: white;
+  padding: 20px;
+}
+
+.main h2 a {
+  text-decoration: none;
+  color: #ff891a;
+}
+
+.main h2 a:hover{
+  color: #ffc71a;
+}
+
+article img{
+  width: 70%;
+}
+
+article h2,
+article h5,
+article img,
+article p{
+  visibility: inherit;
+}
+
+/*author column*/
+aside.usermenu{
+  box-sizing: border-box;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 4;
+  width: 0%;
+  background-color: #333;
+  overflow: auto;
+  text-align: center;
+  color: white;
+  padding-bottom: 100px;
+}
+
+.close{
+  position: absolute;
+  top:0;
+  left: 0;
+  font-weight: bold;
+  font-size: 4ex;
+  padding: 2.5%;
+  color: inherit;
+  cursor: pointer;
+}
+
+a.close:hover{
+  color: gray;
+}
+
+.usermenu h2{
+  font-size: 4ex;
+  color: inherit;
+}
+
+.usermenu img{
+  width: 100%;
+  padding: 15%;
+  border-radius: 50%;
+}
+
+.usermenu p{
+  padding-left: 10%;
+  padding-right: 10%;
+  color: inherit;
+  text-align: justify;
+}
+
+.usermenu a.contact {
+  color:black;
+  background: white;
+  border-radius: 2px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  padding: 15px;
+  text-align: center;
+  background: #333;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+  color: #ff891a;
+}
+
+.fa:hover:not(.fa-file-pdf-o) {
+  color: #ffc71a;
+}
+
+.fa-file-pdf-o {
+  padding: 0;
+  font-size: inherit;
+  width: 30px;
+  text-decoration: none;
+  margin: 0;
+  color: inherit;
+  transition: 0s;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row, nav {
+    flex-direction: column;
+  }
+
+  article img{
+    width: 100%;
+  }
+
+  .open {
+    width: 100% !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .noscroll {
+    overflow: hidden;
+    position: relative !important;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,65 @@
+.side-right {
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+  overflow: auto;
+}
+
+.main-page {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* main */
+.side-right a {
+  text-decoration: none;
+  color: inherit;
+}
+
+article {
+  height: 200px;
+  width: 100%;
+  background-color: #ffffff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+article:hover div.header {
+  background-color: rgba(255, 170, 0, 0.798);
+}
+
+article .bg {
+  background-size: cover;
+}
+
+.orario {
+  background-image: url('http://paolopalumbotesting.altervista.org/unipage/img/hour-cover.jpg');
+}
+
+.programming {
+  background-image: url('http://paolopalumbotesting.altervista.org/unipage/img/programming-cover.jpg');
+}
+
+article div.header {
+  text-align: center;
+  background-color: rgba(255, 123, 0, 0.798);
+  background-size: cover;
+  color: white;
+  width: 100%;
+  padding: 1px;
+}
+article p {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+article p.date {
+  font-size: 1.5ex;
+  text-align: right;
+}
+@media screen and (max-width: 700px) {
+  .row, nav {
+    flex-direction: column;
+  }
+}
