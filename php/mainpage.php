@@ -15,8 +15,11 @@
     <link rel="apple-touch-icon" href="/blog/img/logo.png">
     <script src="./../javascript/index.js" charset="utf-8"></script>
     <script src="./../javascript/ajax/mail.js" charset="utf-8"></script>
+    <script src="./../javascript/ajax/ArticleLoader.js"></script>
+		<script src="./../javascript/ajax/ArticleDashboard.js"></script>
+		<script src="./../javascript/util/dataManipulation.js"></script>
   </head>
-  <body>
+  <body onload="ArticleLoader.getArticles('')">
 
     <?php
       include DIR_LAYOUT."header.php";
@@ -25,7 +28,7 @@
 
 <!-- The flexible grid (content) -->
     <div class="row">
-      <div class="main-page" id="articleDashboard">
+      <div class="main-page main" id="articleDashboard">
         <!--  -->
       </div>
       <div class="side-right">

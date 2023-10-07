@@ -13,8 +13,11 @@
     <link rel="stylesheet" href="./../css/master.css">
     <script src="./../javascript/index.js" charset="utf-8"></script>
     <script src="./../javascript/ajax/mail.js" charset="utf-8"></script>
+    <script src="./../javascript/ajax/ArticleLoader.js"></script>
+		<script src="./../javascript/ajax/ArticleDashboard.js"></script>
+		<script src="./../javascript/util/dataManipulation.js"></script>
   </head>
-  <body>
+  <body onload="ArticleLoader.getArticles('db')">
 
     <?php
       include DIR_LAYOUT."header.php";

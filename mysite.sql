@@ -30,4 +30,9 @@ VALUES
   ("Sane Magical Prices", '2022-11-10', "Prezi Regolari per Oggetti fuori dal Comune.", "/5e/Sane_Magical_Prices.pdf", "", "rpg"),
   ("The Monster Harvester Handbook", '2022-11-10', "Guida alla raccolta di parti utili e trofei dalle Bestie di tutte le terre.", "/5e/The_Monster_Harvester_Handbook.pdf", "", "rpg"),
   ("FOCOS: Vigneto I", '2022-11-25', "Note su come gestire il Vigneto del Mago delle Viti.", "/cos/winery_I.pdf", "", "rpg"),
-  ("FOCOS: Vigneto II", '2022-11-25', "Note su come gestire il Vigneto del Mago delle Viti.", "/cos/winery_II.pdf", "", "rpg");
+  ("FOCOS: Vigneto II", '2022-11-25', "Note su come gestire il Vigneto del Mago delle Viti.", "/cos/winery_II.pdf", "", "rpg"),
+  ("Diagramma Entita-Relazione Ristrutturato", '2019-12-23', "Database progettato da Paolo Palumbo e Giacomo Tornabene.", "/database/farmhouse_23_12_R.pdf", "", "db"),
+  ("Diagramma Entita-Relazione Non-Ristrutturato", '2019-12-23', "Database progettato da Paolo Palumbo e Giacomo Tornabene.", "/database/farmhouse_23_12_nonR.pdf", "", "db"),
+  ("Schema Database estratto con DbSchema", '2019-12-05', "Database progettato da Paolo Palumbo e Giacomo Tornabene.", "/database/farmhouse/farmhouse.html", "", "db"),
+  ("Schema Database a Gruppi estratto con DbSchema", '2019-12-05', "Database progettato da Paolo Palumbo e Giacomo Tornabene.", "/database/farmhouse/farmhousegroup.html", "", "db"),
+  ("Diagramma Entita-Relazione", '2019-11-05', "Diagramma ER, realizzato da Paolo Palumbo e Giacomo Tornabene.", "/database/farmhouse_5_11_end_.pdf", "", "db");

@@ -47,55 +47,7 @@
         <a href="/books/italy_by_night.pdf"><i class="fa fa-file-pdf-o"></i> Italy by Night</a>
       </div>
       <div class="main" id="articleDashboard">
-      	<article class="">
-          <h2><a href="/cos/Curse_of_Strahd.pdf">Curse of Strahd</a></h2>
-          <h5>Manuale 2022, 27 Ottobre</h5>
-          <p>Guida alla campagna COS.</p>
-          <br>
-        </article>
-        <hr>
-        <article class="">
-          <h2><a href="/cos/Dichiarazione_Di_Intenti_1.1.pdf">Dichiarazione d'Intenti</a></h2>
-          <h5>2022, 27 Ottobre</h5>
-          <p>Regolamento e speifiche per la campagna COS.</p>
-          <br>
-        </article>
-        <hr>
-        <article class="">
-          <h2><a href="/5e/Brancalonia.pdf">Brancalonia</a></h2>
-          <h5>2022, 10 Novembre</h5>
-          <p>Manuale d'ambientazione Fantasy-Spaghetti.</p>
-          <br>
-        </article>
-        <hr>
-        <article class="">
-          <h2><a href="/5e/Sane_Magical_Prices.pdf">Sane Magical Prices</a></h2>
-          <h5>2022, 10 Novembre</h5>
-          <p>Prezi Regolari perOggetti fuori dal Comune.</p>
-          <br>
-        </article>
-        <hr>
-        <article class="">
-          <h2><a href="/5e/The_Monster_Harvester_Handbook.pdf">The Monster Harvester Handbook</a></h2>
-          <h5>2022, 10 Novembre</h5>
-          <p>Guida alla raccolta di parti utili e trofei dalle Bestie di tutte le terre.</p>
-          <br>
-        </article>
-        <hr>
-        <article class="">
-          <h2><a href="/cos/winery_I.pdf">FOCOS: Vigneto I</a></h2>
-          <h5>2022, 25 Novembre</h5>
-          <p>Note su come gestire il Vigneto del Mago delle Viti.</p>
-          <br>
-        </article>
-        <hr>
-        <article class="">
-          <h2><a href="/cos/winery_II.pdf">FOCOS: Vigneto II</a></h2>
-          <h5>2022, 25 Novembre</h5>
-          <p>Note su come gestire il Vigneto del Mago delle Viti.</p>
-          <br>
-        </article>
-        <hr>
+      	
       </div>
     </div>
 
