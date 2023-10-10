@@ -5,10 +5,18 @@
 </head>
 <body>
     <h1>Carica un file</h1>
-    <form action="http://paolopalumbotesting.altervista.org/upload.php" method="POST" enctype="multipart/form-data">
-        <input type="file" name="fileToUpload" accept=".jpg, .jpeg, .png, .pdf" required>
+    <form action="../php/util/upload.php" method="POST" enctype="multipart/form-data">
+        <input type="file" id="file" name="fileToUpload" accept=".jpg, .jpeg, .png, .pdf" required>
         <input type="submit" value="Carica">
     </form>
     <!-- Semplice form di valutazione sul trasferimento dei file -->
+
+    <script>
+        function f(){
+            var fileInput = document.getElementById('file');
+            console.log(fileInput.files)
+        }
+    </script>
+
 </body>
 </html>

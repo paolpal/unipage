@@ -34,5 +34,25 @@
 		
 		return $result;
 	}
+
+	function addArticle($title, $date, $description, $targetFile, $type){
+		global $uniPageDb;
+
+		$insertQuery = "INSERT INTO articolo (title, date, description, link, classNames, type) VALUES (?, ?, ?, ?, '', ?)";
+		$stmt = $uniPageDb->prepare($insertQuery);
+		if ($stmt === false) {
+			die("Errore nella preparazione della query: " . $uniPageDb->error);
+		}
+
+        $stmt->bind_param("sssss", $title, $date, $description, $targetFile, $type);
+		$stmt->execute();
+
+		if ($stmt === false) {
+			die("Errore nell'esecuzione della query: " . $stmt->error);
+		}
+		$stmt->close();
+		$uniPageDb->closeConnection();
+		return true; 
+	}
 	
 ?>

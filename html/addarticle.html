@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carica un nuovo articolo</title>
+    <style>
+        #drop-zone {
+            width: 100%;
+            height: 100px;
+            border: 2px dashed #ccc;
+            text-align: center;
+            padding: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Carica un nuovo articolo</h1>
+    <form action="../php/ajax/articleUpload.php" method="POST" enctype="multipart/form-data">
+        <label for="title">Titolo:</label>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="description">Descrizione:</label>
+        <textarea id="description" name="description" required></textarea><br><br>
+
+        <label for="type">Tipo di articolo:</label>
+        <select id="type" name="type" required>
+            <option value="rpg">RPG</option>
+            <option value="db">Database</option>
+            <!-- Aggiungi altri tipi di articolo se necessario -->
+        </select><br><br>
+
+        <div id="drop-zone">
+            Trascina il file qui o clicca per selezionare un file (PDF o HTML):
+            <input type="file" id="file" name="file" accept=".pdf, .html" style="display: none;">
+        </div><br><br>
+
+        <input type="submit" value="Carica">
+    </form>
+
+    <script>
+        // Aggiungi gestione trascinamento e rilascio del file nella drop zone
+        var dropZone = document.getElementById('drop-zone');
+        var fileInput = document.getElementById('file');
+
+        dropZone.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            dropZone.style.border = '2px dashed #000';
+        });
+
+        dropZone.addEventListener('dragleave', function() {
+            dropZone.style.border = '2px dashed #ccc';
+        });
+
+        // Opzionale: Nascondi l'input del file quando si seleziona un file con il drag and drop
+        fileInput.addEventListener('change', function() {
+            if (fileInput.files.length > 0) {
+                dropZone.style.display = 'none';
+            }
+        });
+
+
+        function dropHandler(ev) {
+            console.log("File(s) dropped");
+
+            // Prevent default behavior (Prevent file from being opened)
+            ev.preventDefault();
+
+            if (ev.dataTransfer.items) {
+                let list = new DataTransfer();
+                // Use DataTransferItemList interface to access the file(s)
+                [...ev.dataTransfer.items].forEach((item, i) => {
+                    // If dropped items aren't files, reject them
+                    if (item.kind === "file") {
+                        const file = item.getAsFile();
+                        list.items.add(file);
+                        console.log(`... file[${i}].name = ${file.name}`);
+                    }
+                    fileInput.files = list.files;
+                });
+            } else {
+                // Use DataTransfer interface to access the file(s)
+                [...ev.dataTransfer.files].forEach((file, i) => {
+                console.log(`... file[${i}].name = ${file.name}`);
+                });
+                fileInput.files = ev.dataTransfer.files;
+            }
+
+            console.log(fileInput.files)
+        }
+
+        dropZone.addEventListener('drop', dropHandler);
+
+
+    </script>
+</body>
+</html>
