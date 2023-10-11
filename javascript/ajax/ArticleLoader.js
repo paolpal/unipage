@@ -8,28 +8,24 @@ ArticleLoader.SUCCESS_RESPONSE = "0";
 ArticleLoader.NO_MORE_DATA = "-1";
 
 ArticleLoader.getArticles = function(type) {
-    var queryString;
-    if (type === null || type.length === 0){
-		  queryString = "?latest";
-	  }
-    else queryString = "?type="+type;
-    var url = ArticleLoader.USER_REQUEST + queryString;
-  
-    fetch(url, {
-      method: ArticleLoader.DEFAUL_METHOD,
-      //mode: 'cors', // Aggiungi questa opzione se la richiesta è cross-origin
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      // body: JSON.stringify(data), // Se hai dei dati da inviare nel corpo della richiesta
-    })
-    .then(response => response.json())
-    .then(data => ArticleLoader.onAjaxResponse(data))
-    .catch(error => {
-      // Gestisci eventuali errori qui
-      console.error('Errore durante la richiesta:', error);
-    });
+  var queryString;
+  if (type === null || type.length === 0){
+      queryString = "?latest";
+  }
+  else queryString = "?type=" + type;
+  var url = ArticleLoader.USER_REQUEST + queryString;
+
+  ajaxManager.performAjaxRequest(
+      ArticleLoader.DEFAUL_METHOD,
+      url,
+      ArticleLoader.ASYNC_TYPE,
+      null, // Non hai bisogno di specificare 'dataToSend' in questo caso
+      function (data) {
+          ArticleLoader.onAjaxResponse(data);
+      }
+  );
 }
+
   
 
 ArticleLoader.onAjaxResponse = function(response){

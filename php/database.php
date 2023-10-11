@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./../css/master.css">
     <script src="./../javascript/index.js" charset="utf-8"></script>
     <script src="./../javascript/ajax/mail.js" charset="utf-8"></script>
+    <script src="./../javascript/ajax/AjaxManager.js"></script>
     <script src="./../javascript/ajax/ArticleLoader.js"></script>
 		<script src="./../javascript/ajax/ArticleDashboard.js"></script>
 		<script src="./../javascript/util/dataManipulation.js"></script>
