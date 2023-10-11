@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test AjaxManager</title>
+    <script src="../javascript/ajax/AjaxManager.js"></script>
+</head>
+<body>
+    <button id="fetchButton">Fetch Data</button>
+    <button id="legacyButton">Legacy Request</button>
+    <div id="result"></div>
+
+    <script>
+        // Esempio di utilizzo con AjaxManager
+
+        document.getElementById('fetchButton').addEventListener('click', function () {
+            // Esempio di richiesta utilizzando fetch
+            ajaxManager.performFetchRequest('GET', 'https://jsonplaceholder.typicode.com/posts/1', true, null, function (data) {
+                document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+            });
+        });
+
+        document.getElementById('legacyButton').addEventListener('click', function () {
+            // Esempio di richiesta utilizzando il fallback ai vecchi codici
+            ajaxManager.performLegacyRequest('GET', 'https://jsonplaceholder.typicode.com/posts/2', true, null, function (data) {
+                document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+            });
+        });
+    </script>
+</body>
+</html>

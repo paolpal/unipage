@@ -3,14 +3,71 @@
 <head>
     <title>Carica un nuovo articolo</title>
     <style>
-        #drop-zone {
-            width: 100%;
-            height: 100px;
-            border: 2px dashed #ccc;
-            text-align: center;
-            padding: 20px;
-            cursor: pointer;
-        }
+        
+
+        #articleForm {
+    position: fixed;
+    bottom: 0;
+    left: -400px; /* Nascondi il form nella posizione iniziale */
+    max-width: 400px;
+    padding: 20px;
+    background-color: #ff9800; /* Colore arancione */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s; /* Aggiungi un'animazione di transizione */
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #fff; /* Testo bianco */
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#drop-zone {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #ff9800; /* Colore arancione per il testo */
+    font-weight: bold;
+}
+
+#file {
+    display: none;
+}
+
+input[type="button"] {
+    background-color: #ff5722; /* Arancione più scuro */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #d84315; /* Colore arancione più scuro quando il mouse è sopra */
+}
+
+/* Mostra il form quando è attivo */
+#articleForm.active {
+    left: 0;
+}
+
+
     </style>
 </head>
 <body>
@@ -23,10 +80,12 @@
         <textarea id="description" name="description" required></textarea><br><br>
 
         <div id="drop-zone">
-            Trascina il file qui o clicca per selezionare un file (PDF o HTML):
+            <p id="drop-text">
+                Trascina il file qui o clicca per selezionare un file (PDF o HTML):
+            </p>
             <input type="file" id="file" name="file" accept=".pdf, .html" style="display: none;">
         </div><br><br>
-
+        <p id="fileNameDisplay"></p>
         <input type="button" value="Carica" onclick="uploadArticle('rpg')">
     </form>
 
@@ -86,13 +145,15 @@
                         const file = item.getAsFile();
                         list.items.add(file);
                         console.log(`... file[${i}].name = ${file.name}`);
+                        document.getElementById("drop-text").textContent = `File selezionato: ${file.name}`;
                     }
                     fileInput.files = list.files;
                 });
             } else {
                 // Use DataTransfer interface to access the file(s)
                 [...ev.dataTransfer.files].forEach((file, i) => {
-                console.log(`... file[${i}].name = ${file.name}`);
+                    console.log(`... file[${i}].name = ${file.name}`);
+                    document.getElementById("drop-text").textContent = `File selezionato: ${file.name}`;
                 });
                 fileInput.files = ev.dataTransfer.files;
             }
